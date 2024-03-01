@@ -6,7 +6,7 @@ const mongodb_url = "mongodb+srv://akash:akash1995@cluster0.2askaew.mongodb.net"
 const connectDB = async () => {
   try {
     const connectionInstance = await mongoose.connect(
-      `${mongodb_url}/${DB_NAME}`
+      `${process.env.MONGODB_URL}/${DB_NAME}`
     );
     console.log(
       `\n MongoDB Connected !! DB Host : ${connectionInstance.connection.host}`
